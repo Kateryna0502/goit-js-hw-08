@@ -75,31 +75,35 @@ const images = [
 
 // instance.show()
 
+const container = document.querySelector('.gallery');
+
 function productTemplate(product) {
-    return `<li class="gallery-item">
+  return `<li class="gallery-item">
             <a class="gallery-link" href="${images.original}">
                 <img class="gallery-image" src="${images.preview}" data-source="${images.original}" alt="${images.description}"/>
             </a>
-        </li>`
-}
+        </li>`;
+  }
 function productsTemplate(arr) { 
     return arr.map(productTemplate).join('');
 }
-const container = document.querySelector('.gallery');
-container.addEventListener('click', e => {
-    if (e.target === e.currentTarget) return;
-    const liElem = e.target.closest('li');
-    const source = liElem.dataset.source;
-  const image = gallery.find(el => el.source = source);
-
 const markup = productsTemplate(images);
 container.innerHTML = markup;
 
+container.addEventListener('click', event => {
+  event.preventDefault();
+  if (e.target === e.currentTarget) return;
   
- 
-function showModal(product) {
+  const liElem = e.target.closest('li');
+  const source = liElem.dataset.source;
+  const product = gallery.find(el => el.source == source);
+
+  showModal(product);
+});
+
+function showModal (product) {
 const markup = `<li class="gallery-item">
-            <a class="gallery-link" href="large-image.jpg">
+            <a class="gallery-link" href="${images.original}">
                 <img class="gallery-image" src="${images.preview}" data-source="${images.original}" alt="${images.description}"/>
             </a>
         </li>`;
@@ -121,5 +125,5 @@ const markup = `<li class="gallery-item">
     }
   }
     
-})
+
 
