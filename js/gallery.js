@@ -77,7 +77,7 @@ const images = [
 
 function productTemplate(product) {
     return `<li class="gallery-item">
-            <a class="gallery-link" href="large-image.jpg">
+            <a class="gallery-link" href="${images.original}">
                 <img class="gallery-image" src="${images.preview}" data-source="${images.original}" alt="${images.description}"/>
             </a>
         </li>`
@@ -86,6 +86,7 @@ function productsTemplate(arr) {
     return arr.map(productTemplate).join('');
 }
 const markup = productsTemplate(images);
+container.innerHTML = markup;
 
 const container = document.querySelector('.gallery');
 container.addEventListener('click', e => {
@@ -94,7 +95,7 @@ container.addEventListener('click', e => {
     const source = liElem.dataset.source;
   const image = gallery.find(el => el.source = source);
 
-  container.innerHTML = markup;
+  
   console.log(markup);
  
 function showModal(product) {
