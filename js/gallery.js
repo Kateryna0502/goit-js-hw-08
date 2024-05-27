@@ -83,7 +83,7 @@ function productTemplate(product) {
         </li>`
 }
 function productsTemplate(arr) { 
-    return arr.map(productTemplate).join('');
+    return arr.map({ preview, original, description }).join('');
 }
 const markup = productsTemplate(images);
 
