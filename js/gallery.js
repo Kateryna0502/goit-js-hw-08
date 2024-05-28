@@ -92,9 +92,9 @@ container.innerHTML = markup;
 
 container.addEventListener('click', event => {
   event.preventDefault();
-  if (e.target === e.currentTarget) return;
+  if (event.target === event.currentTarget) return;
   
-  const liElem = e.target.closest('li');
+  const liElem = event.target.closest('li');
   const source = liElem.dataset.source;
   const product = images.find(el => el.source == source);
 
