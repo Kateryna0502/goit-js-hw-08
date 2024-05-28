@@ -94,9 +94,9 @@ container.addEventListener('click', event => {
   event.preventDefault();
   if (event.target === event.currentTarget) return;
   
-  const liElem = event.target.closest('li');
+  const liElem = event.target.closest('img');
   const source = liElem.dataset.source;
-  const product = images.find(el => el.source == source);
+  const product = images.find(el => el.original == source);
 
   showModal(product);
 });

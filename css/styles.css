@@ -1,10 +1,10 @@
 .gallery {
     display: flex;
-        justify-content: space-around;
-        flex-wrap: wrap;
-        gap: 25px;
-        user-select: none;
-        list-style: none;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 25px;
+    user-select: none;
+    list-style: none;
 }
 
 .gallery-link {
