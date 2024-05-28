@@ -77,10 +77,10 @@ const images = [
 
 const container = document.querySelector('.gallery');
 
-function productTemplate(product) {
+function productTemplate(image) {
   return `<li class="gallery-item">
-            <a class="gallery-link" href="${images.original}">
-                <img class="gallery-image" src="${images.preview}" data-source="${images.original}" alt="${images.description}"/>
+            <a class="gallery-link" href="${image.original}">
+                <img class="gallery-image" src="${image.preview}" data-source="${image.original}" alt="${image.description}"/>
             </a>
         </li>`;
   }
@@ -103,8 +103,8 @@ container.addEventListener('click', event => {
 
 function showModal (product) {
 const markup = `<li class="gallery-item">
-            <a class="gallery-link" href="${images.original}">
-                <img class="gallery-image" src="${images.preview}" data-source="${images.original}" alt="${images.description}"/>
+            <a class="gallery-link" href="${image.original}">
+                <img class="gallery-image" src="${image.preview}" data-source="${image.original}" alt="${image.description}"/>
             </a>
         </li>`;
   
