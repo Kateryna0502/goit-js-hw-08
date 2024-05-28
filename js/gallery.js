@@ -102,11 +102,7 @@ container.addEventListener('click', event => {
 });
 
 function showModal (product) {
-const markup = `<li class="gallery-item">
-            <a class="gallery-link" href="${image.original}">
-                <img class="gallery-image" src="${image.preview}" data-source="${image.original}" alt="${image.description}"/>
-            </a>
-        </li>`;
+const markup = `<img class="gallery-image" src="${image.preview}" data-source="${image.original}" alt="${image.description}"/>`;
   
     const instance = basicLightbox.create(markup, {
       onShow: instance => {
