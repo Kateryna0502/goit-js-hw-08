@@ -64,17 +64,6 @@ const images = [
   },
 ];
 
-// const instance = basicLightbox.create(`
-//     <div class="modal">
-//         <p>
-//             Your first lightbox with just a few lines of code.
-//             Yes, it's really that simple.
-//         </p>
-//     </div>
-// `)
-
-// instance.show()
-
 const container = document.querySelector('.gallery');
 
 function productTemplate(image) {
@@ -104,21 +93,12 @@ container.addEventListener('click', event => {
 function showModal (product) {
 const markup = `<img class="gallery-image" src="${product.preview}" data-source="${product.original}" alt="${product.description}"/>`;
   
-    const instance = basicLightbox.create(markup, {
-      onShow: instance => {
-        window.addEventListener('keydown', onModalClose);
-      },
-      onClose: instance => {
-        window.removeEventListener('keydown', onModalClose);
-      }, 
-    });
-    instance.show();
+  
+  const instance = basicLightbox.create(`
+            <img src="${event.target.dataset.source}" width="800" height="600">
+        `);
 
-    function onModalClose(e) {
-      if (e.code === 'Escape') {
-        instance.close();
-      }
-    }
+        instance.show();
   }
     
 
